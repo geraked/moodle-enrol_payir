@@ -1,0 +1,28 @@
+<div align="center">
+
+<p class="paymentrequired"><?php print_string("paymentrequired") ?></p>
+<p class="instancename" style="display: none;"><b><?php echo $instancename; ?></b></p>
+<p class="amount" style="font-size: 1.7rem;"><b><?php echo "{$localisedcost} " . get_string('toman', 'enrol_payir'); ?></b></p>
+<p class="pay-logo"><img alt="<?php print_string('payiraccepted', 'enrol_payir') ?>" width="70px" src="<?php echo "$CFG->wwwroot/enrol/payir/pix/logo.svg"; ?>" /></p>
+<?php
+    $payirurl = "$CFG->wwwroot/enrol/payir/send.php";
+?>
+<form action="<?php echo $payirurl ?>" method="post">
+
+<input type="hidden" name="course_short_name" value="<?php p($courseshortname) ?>" />
+<input type="hidden" name="custom" value="<?php echo "{$USER->id}-{$course->id}-{$instance->id}" ?>" />
+
+<input type="hidden" name="currency_code" value="<?php p($instance->currency) ?>" />
+<input type="hidden" name="amount" value="<?php p($cost) ?>" />
+
+<input type="hidden" name="return" value="<?php echo "$CFG->wwwroot/enrol/payir/return.php?id=$course->id" ?>" />
+
+<input type="hidden" name="first_name" value="<?php p($userfirstname) ?>" />
+<input type="hidden" name="last_name" value="<?php p($userlastname) ?>" />
+<input type="hidden" name="email" value="<?php p($USER->email) ?>" />
+
+<input type="submit" class="btn btn-primary" value="<?php print_string("sendpaymentbutton", "enrol_payir") ?>" />
+
+</form>
+
+</div>
