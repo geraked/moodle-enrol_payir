@@ -130,6 +130,13 @@ if (isset($result->status)) {
             die;
         }
 
+        // Identify the Cheater
+        $factarr = explode('-', $data->factornumber);
+        if ($factarr[0] != $data->userid || $factarr[1] != $data->courseid || $factarr[2] != $data->instanceid) {
+            \enrol_payir\util::message_payir_error_to_admin("User $data->userid is a cheater!", $data);
+            die;
+        }        
+        
         // Make sure this transaction doesn't exist already.
         if ($existing = $DB->get_record("enrol_payir", array("transid" => $data->transid), "*", IGNORE_MULTIPLE)) {
             \enrol_payir\util::message_payir_error_to_admin("Transaction $data->transid is being repeated!", $data);
