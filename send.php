@@ -22,7 +22,6 @@ $courseName     = $_POST['course_short_name'];
 $description    = "$courseName - $userName";
 $factorNumber   = $_POST['custom'];
 $amount         = $_POST['amount'] * 10;
-$redirect       = $_POST['redirect'];
 $api            = $SESSION->payir_api;
 $mobile         = "";
 
