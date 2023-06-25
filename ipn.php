@@ -36,7 +36,6 @@ define('NO_DEBUG_DISPLAY', true);
 require_once("../../config.php");
 require_once("lib.php");
 require_once("pay.php");
-require_once("sapak.php");
 require_once($CFG->libdir . '/enrollib.php');
 require_once($CFG->libdir . '/filelib.php');
 
