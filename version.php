@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022121100;
+$plugin->version   = 2023062500;
 $plugin->requires  = 2018000000;
 $plugin->component = 'enrol_payir';
-$plugin->release   = "1.0.1";
+$plugin->release   = "1.0.2";
